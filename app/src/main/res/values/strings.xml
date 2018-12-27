@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Section RecyclerView</string>
+    <string name="value_1">1 = Sangat Tidak Baik</string>
+    <string name="value_3">3 = Tidak Baik</string>
+    <string name="value_5">5 = Baik</string>
+    <string name="value_7">7 = Sangat Baik</string>
+    <string name="nav_example1">Section with Header</string>
+</resources>

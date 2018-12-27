@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<RelativeLayout android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:padding="8dp"-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/no"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="15sp"-->
+        <!--android:layout_marginStart="3dp"-->
+        <!--tools:text="No"/>-->
+
+    <!--<TextView-->
+        <!--android:layout_toEndOf="@+id/no"-->
+        <!--android:id="@+id/question"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="15sp"-->
+        <!--android:layout_marginStart="10dp"-->
+        <!--tools:text="List Pertanyaan"/>-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/kd_kuesioner"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="15sp"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:visibility="gone"-->
+        <!--android:layout_marginStart="3dp"/>-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/kd_pertanyaan"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="15sp"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:visibility="gone"-->
+        <!--android:layout_marginStart="3dp"/>-->
+
+    <!--<RadioGroup-->
+        <!--android:id="@+id/radioGrup"-->
+        <!--android:layout_below="@+id/question"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="20dp">-->
+
+        <!--<RadioButton-->
+            <!--android:textSize="15sp"-->
+            <!--android:id="@+id/rbValueOf1"-->
+            <!--android:hint="@string/value_1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="10dp"-->
+            <!--android:layout_marginEnd="10dp"/>-->
+
+        <!--<RadioButton-->
+            <!--android:textSize="15sp"-->
+            <!--android:id="@+id/rbValueOf3"-->
+            <!--android:hint="@string/value_3"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="10dp"-->
+            <!--android:layout_marginEnd="10dp"/>-->
+
+        <!--<RadioButton-->
+            <!--android:textSize="15sp"-->
+            <!--android:id="@+id/rbValueOf5"-->
+            <!--android:hint="@string/value_5"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="10dp"-->
+            <!--android:layout_marginEnd="10dp"/>-->
+
+        <!--<RadioButton-->
+            <!--android:textSize="15sp"-->
+            <!--android:id="@+id/rbValueOf7"-->
+            <!--android:hint="@string/value_7"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="10dp"-->
+            <!--android:layout_marginEnd="10dp"/>-->
+    <!--</RadioGroup>-->
+
+<!--</RelativeLayout>-->
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:id="@+id/imgItem"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/imgItem"
+        android:layout_marginStart="15dp"
+        tools:text="Item test text"
+        android:id="@+id/tvItem"/>
+
+
+</RelativeLayout>
