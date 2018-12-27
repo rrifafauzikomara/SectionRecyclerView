@@ -4,5 +4,8 @@
     <string name="value_3">3 = Tidak Baik</string>
     <string name="value_5">5 = Baik</string>
     <string name="value_7">7 = Sangat Baik</string>
-    <string name="nav_example1">Section with Header</string>
+    <string name="ks01">A. Kompetensi Pedagogik : kemampuan mengelola proses pembelajaran mahasiswa.</string>
+    <string name="ks02">B. Kompetensi Profesional : kemampuan penguasaan materi pelajaran secara luas dan mendalam.</string>
+    <string name="ks03">C. Kompetensi Kepribadian : kemampuan kepribadian yang mantap, berakhlak mulia, arif, dan berwibawa serta menjadi teladan mahasiswa.</string>
+    <string name="ks04">D. Kompetensi Sosial : kemampuan berkomunikasi dan berinteraksi secara efektif dan efisien dengan mahasiswa, sesama dosen, orangtua/wali, dan masyarakat sekitar</string>
 </resources>

@@ -2,40 +2,61 @@ package rifafauzi6.id.sectionrecyclerview.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-import butterknife.ButterKnife;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionParameters;
 import io.github.luizgrp.sectionedrecyclerviewadapter.StatelessSection;
 import rifafauzi6.id.sectionrecyclerview.R;
 
 public class QuestionAdapter extends StatelessSection {
 
-    String title;
-    List<String> list;
+    public final static int KS01 = 0;
+    public final static int KS02 = 1;
+    public final static int KS03 = 2;
+    public final static int KS04 = 3;
 
-//    private List<Question> listQuestion;
-//    private Context context;
-//
-//    private LayoutInflater inflter;
-//    public static ArrayList<String> kdPertanyaan;
-//    public static ArrayList<String> kdKuesioner;
-//    public static ArrayList<String> selectedAnswers;
+    private final int topic;
+    private Context context;
 
-    public QuestionAdapter(String title, List<String> list) {
+    private String title;
+    private List<String> list;
+
+    public QuestionAdapter(Context context, int topic) {
         super(SectionParameters.builder()
                 .itemResourceId(R.layout.list_pertanyaan)
                 .headerResourceId(R.layout.list_title)
                 .build());
 
-        this.title = title;
-        this.list = list;
+        this.context = context;
+        this.topic = topic;
+
+        switch (topic) {
+            case KS01:
+                this.title = context.getString(R.string.ks01);
+                this.list = getNews(R.array.news_world);
+                break;
+            case KS02:
+                this.title = context.getString(R.string.ks02);
+                this.list = getNews(R.array.news_biz);
+                break;
+            case KS03:
+                this.title = context.getString(R.string.ks03);
+                this.list = getNews(R.array.news_tech);
+                break;
+            case KS04:
+                this.title = context.getString(R.string.ks04);
+                this.list = getNews(R.array.news_sports);
+                break;
+        }
+    }
+
+    private List<String> getNews(int arrayResource) {
+        return new ArrayList<>(Arrays.asList(context.getResources().getStringArray(arrayResource)));
     }
 
     @Override
@@ -52,10 +73,9 @@ public class QuestionAdapter extends StatelessSection {
     public void onBindItemViewHolder(RecyclerView.ViewHolder holder, int position) {
         final ItemViewHolder itemHolder = (ItemViewHolder) holder;
 
-        String name = list.get(position);
+        String item = list.get(position);
 
-        itemHolder.tvItem.setText(name);
-        itemHolder.imgItem.setImageResource(name.hashCode() % 2 == 0 ? R.drawable.ic_face_black_48dp : R.drawable.ic_tag_faces_black_48dp);
+        itemHolder.tvHeader.setText(item);
 
     }
 
@@ -71,37 +91,25 @@ public class QuestionAdapter extends StatelessSection {
         headerHolder.tvTitle.setText(title);
     }
 
-    class HeaderViewHolder extends RecyclerView.ViewHolder {
+    private class HeaderViewHolder extends RecyclerView.ViewHolder {
 
-        //        @BindView(R.id.tvTitle) TextView tvTitle;
         private final TextView tvTitle;
 
         HeaderViewHolder(View view) {
             super(view);
 
-            tvTitle = (TextView) view.findViewById(R.id.tvTitle);
-            ButterKnife.bind(this, view);
+            tvTitle = view.findViewById(R.id.tvTitle);
         }
     }
 
-    class ItemViewHolder extends RecyclerView.ViewHolder {
-//        @BindView(R.id.kd_pertanyaan) TextView txtKdPertanyaan;
-//        @BindView(R.id.kd_kuesioner) TextView txtKdKuesioner;
-//        @BindView(R.id.no) TextView txtNo;
-//        @BindView(R.id.question) TextView txtPertanyaan;
-//        @BindView(R.id.rbValueOf1) RadioButton rb1;
-//        @BindView(R.id.rbValueOf3) RadioButton rb3;
-//        @BindView(R.id.rbValueOf5) RadioButton rb5;
-//        @BindView(R.id.rbValueOf7) RadioButton rb7;
+    private class ItemViewHolder extends RecyclerView.ViewHolder {
 
-        private final ImageView imgItem;
-        private final TextView tvItem;
+        private final TextView tvHeader;
 
         ItemViewHolder(View view) {
             super(view);
-            ButterKnife.bind(this, view);
-            imgItem = (ImageView) view.findViewById(R.id.imgItem);
-            tvItem = (TextView) view.findViewById(R.id.tvItem);
+
+            tvHeader = view.findViewById(R.id.question);
         }
     }
 

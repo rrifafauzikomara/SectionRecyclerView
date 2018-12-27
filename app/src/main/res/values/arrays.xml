@@ -1,55 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="names">
-        <item>Kristeen Coderre</item>
-        <item>Libby Leslie</item>
-        <item>Sherika Baynes</item>
-        <item>Coralie Mckinny</item>
-        <item>Jon Timms</item>
-        <item>Ezekiel Cousineau</item>
-        <item>Camila Mcgonigle</item>
-        <item>Lakesha Sewell</item>
-        <item>Hunter Kelsch</item>
-        <item>Wendie Meltzer</item>
-        <item>Doretha Preciado</item>
-        <item>Marybelle Staton</item>
-        <item>Angelo Robbins</item>
-        <item>Norene Baptista</item>
-        <item>Kathryn Mansfield</item>
-        <item>Jamee Botts</item>
-        <item>Jama Spiker</item>
-        <item>Eugene Lazenby</item>
-        <item>Tomika Blind</item>
-        <item>Johana Massengill</item>
-        <item>Randa Wommack</item>
-        <item>Lang Medina</item>
-        <item>Clyde Keena</item>
-        <item>Malisa Knopp</item>
-        <item>Yaeko Murakami</item>
-        <item>Pa Gilmore</item>
-        <item>Lashell Boyette</item>
-        <item>Sherri Hogans</item>
-        <item>Emelda Ahlquist</item>
-        <item>Kala Bardin</item>
-        <item>Alysia Parra</item>
-        <item>Harris Yopp</item>
-        <item>Claribel Freeney</item>
-        <item>Laila Ekstrom</item>
-        <item>Numbers Solomon</item>
-        <item>Desirae Endicott</item>
-        <item>Shandi Zahl</item>
-        <item>Venessa Brunson</item>
-        <item>Guillermo Abila</item>
-        <item>Kenna Boles</item>
-        <item>Daisey Mariscal</item>
-        <item>Marry Gartrell</item>
-        <item>Tyree Boateng</item>
-        <item>Caryl Matheney</item>
-        <item>Zenaida Perfecto</item>
-        <item>Izola Stivers</item>
-        <item>Rosario Rominger</item>
-        <item>Bennett Donelson</item>
-        <item>Sharell Hewes</item>
-        <item>Kirk Sim</item>
+    <string-array name="news_world">
+        <item>Signs of Life as Workers Scour Rubble of Taiwan Earthquake</item>
+        <item>How a Medical Mystery in Brazil Led Doctors to Zika</item>
+        <item>U.S. Judge Approves Extradition of Former Salvadoran Colonel</item>
+    </string-array>
+    <string-array name="news_biz">
+        <item>Airlines Reap Record Profits, and Passengers Get Peanuts</item>
+        <item>Inside Wealth: Revaluing Family Treasures for the Taxman</item>
+        <item>Fair Game: Fining Bankers, Not Shareholders, for Banks’ Misconduct</item>
+    </string-array>
+    <string-array name="news_tech">
+        <item>Farhad and Mike’s Week in Tech: Start-Ups and the Circle of Life</item>
+        <item>Tech Tip: Moving Files to a Mac From a PC</item>
+        <item>This Video Game Will Break Your Heart</item>
+    </string-array>
+    <string-array name="news_sports">
+        <item>Horse Racing: A Victory for a Baffert Horse</item>
+        <item>Tennis: Kerber Wins in Fed Cup</item>
+        <item>Baseball: Blue Jays Sign a Pitcher</item>
     </string-array>
 </resources>
