@@ -5,25 +5,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.github.luizgrp.sectionedrecyclerviewadapter.SectionParameters;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter;
-import io.github.luizgrp.sectionedrecyclerviewadapter.StatelessSection;
 import rifafauzi6.id.sectionrecyclerview.adapter.QuestionAdapter;
+import rifafauzi6.id.sectionrecyclerview.model.Question;
 
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.rv_pertanyaan) RecyclerView rvPertanyaan;
     ProgressDialog loading;
     private SectionedRecyclerViewAdapter sectionAdapter;
+    List<Question> listPertanyaan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
 
         sectionAdapter = new SectionedRecyclerViewAdapter();
 
-        sectionAdapter.addSection(new QuestionAdapter(this, QuestionAdapter.KS01));
-        sectionAdapter.addSection(new QuestionAdapter(this, QuestionAdapter.KS02));
-        sectionAdapter.addSection(new QuestionAdapter(this, QuestionAdapter.KS03));
-        sectionAdapter.addSection(new QuestionAdapter(this, QuestionAdapter.KS04));
+        sectionAdapter.addSection(new QuestionAdapter(this, QuestionAdapter.KS01, listPertanyaan));
+        sectionAdapter.addSection(new QuestionAdapter(this, QuestionAdapter.KS02, listPertanyaan));
+        sectionAdapter.addSection(new QuestionAdapter(this, QuestionAdapter.KS03, listPertanyaan));
+        sectionAdapter.addSection(new QuestionAdapter(this, QuestionAdapter.KS04, listPertanyaan));
 
         loading = new ProgressDialog(this);
         ButterKnife.bind(this);
