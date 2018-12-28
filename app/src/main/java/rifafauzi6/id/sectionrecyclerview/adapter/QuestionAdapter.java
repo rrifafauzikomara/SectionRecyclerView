@@ -18,8 +18,6 @@ import io.github.luizgrp.sectionedrecyclerviewadapter.StatelessSection;
 import rifafauzi6.id.sectionrecyclerview.R;
 import rifafauzi6.id.sectionrecyclerview.model.Question;
 
-import static android.content.ContentValues.TAG;
-
 public class QuestionAdapter extends StatelessSection {
 
     private String title;
@@ -77,8 +75,8 @@ public class QuestionAdapter extends StatelessSection {
         Question question = listQuestion.get(position);
         try {
             //itemHolder.txtKdPertanyaan.setText(kdPertanyaan.set(position, question.getKd_pertanyaan()));
-            itemHolder.txtKdPertanyaan.setText(question.getKd_pertanyaan());
             //itemHolder.txtKdKuesioner.setText(kdKuesioner.set(position, question.getKd_kuesioner()));
+            itemHolder.txtKdPertanyaan.setText(question.getKd_pertanyaan());
             itemHolder.txtKdKuesioner.setText(question.getKd_kuesioner());
             itemHolder.txtNo.setText(question.getNo());
             itemHolder.txtPertanyaan.setText(question.getPertanyaan());
