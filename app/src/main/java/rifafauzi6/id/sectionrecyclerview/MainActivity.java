@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                kuesioner();
+//                kuesioner();
             }
         });
 
@@ -230,68 +230,68 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void kuesioner() {
-
-        ArrayList<String> kodePertanyaan = new ArrayList<>();
-        String kd_pertanyaan = "";
-        //array
-        for (int i = 0; i < QuestionAdapter.kdPertanyaan.size(); i++) {
-            kodePertanyaan.add(kd_pertanyaan + QuestionAdapter.kdPertanyaan.get(i));
-        }
-
-        ArrayList<String> kodeKuesioner = new ArrayList<>();
-        String kd_kuesioner = "";
-        // array
-        for (int i = 0; i < QuestionAdapter.kdKuesioner.size(); i++) {
-            kodeKuesioner.add(kd_kuesioner + QuestionAdapter.kdKuesioner.get(i));
-        }
-
-        ArrayList<String> variable = new ArrayList<>();
-        String valueOfKuesioner = "";
-        //array
-        for (int i = 0; i < QuestionAdapter.selectedAnswers.size(); i++) {
-            variable.add(valueOfKuesioner + QuestionAdapter.selectedAnswers.get(i));
-        }
-
-        String message1 = "Jawaban tidak boleh kosong";
-        if (variable.toString().contains(message1)) {
-            Toast.makeText(getApplicationContext(), message1, Toast.LENGTH_SHORT).show();
-        } else {
-            sendData(kodePertanyaan, kodeKuesioner, variable);
-        }
-    }
-
-    private void sendData(ArrayList<String> kodePertanyaanX, ArrayList<String> kodeKuesionerX, ArrayList<String> variableX) {
-        loading.setMessage("Mengirim Kuesioner ...");
-        loading.setCancelable(false);
-        loading.show();
-        BaseApiService apiService = Server.getUrl().create(BaseApiService.class);
-        Call<ResponsModelKuesioner> getValueofKuesioner = apiService.sendKuesioner(kodePertanyaanX, kodeKuesionerX, variableX);
-        getValueofKuesioner.enqueue(new Callback<ResponsModelKuesioner>() {
-            @Override
-            public void onResponse(@NonNull Call<ResponsModelKuesioner> call, @NonNull Response<ResponsModelKuesioner> response) {
-                loading.dismiss();
-                Log.d("onResponse", "Message : " + Objects.requireNonNull(response.body()).toString());
-                String kode = response.body().getKode();
-                String message = response.body().getPesan();
-                if (kode.equals("1")) {
-                    Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-//                    updateStatus(npm, nik);
-                    Intent send = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(send);
-                } else {
-                    Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-
-                }
-            }
-
-            @Override
-            public void onFailure(@NonNull Call<ResponsModelKuesioner> call, @NonNull Throwable t) {
-                loading.dismiss();
-                Log.e("onFailure : ", "Message : " + String.valueOf(t.getMessage()));
-                Toast.makeText(getApplicationContext(), "Gagal Menghubungkan Internet !", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
+//    private void kuesioner() {
+//
+//        ArrayList<String> kodePertanyaan = new ArrayList<>();
+//        String kd_pertanyaan = "";
+//        //array
+//        for (int i = 0; i < QuestionAdapter.kdPertanyaan.size(); i++) {
+//            kodePertanyaan.add(kd_pertanyaan + QuestionAdapter.kdPertanyaan.get(i));
+//        }
+//
+//        ArrayList<String> kodeKuesioner = new ArrayList<>();
+//        String kd_kuesioner = "";
+//        // array
+//        for (int i = 0; i < QuestionAdapter.kdKuesioner.size(); i++) {
+//            kodeKuesioner.add(kd_kuesioner + QuestionAdapter.kdKuesioner.get(i));
+//        }
+//
+//        ArrayList<String> variable = new ArrayList<>();
+//        String valueOfKuesioner = "";
+//        //array
+//        for (int i = 0; i < QuestionAdapter.selectedAnswers.size(); i++) {
+//            variable.add(valueOfKuesioner + QuestionAdapter.selectedAnswers.get(i));
+//        }
+//
+//        String message1 = "Jawaban tidak boleh kosong";
+//        if (variable.toString().contains(message1)) {
+//            Toast.makeText(getApplicationContext(), message1, Toast.LENGTH_SHORT).show();
+//        } else {
+//            sendData(kodePertanyaan, kodeKuesioner, variable);
+//        }
+//    }
+//
+//    private void sendData(ArrayList<String> kodePertanyaanX, ArrayList<String> kodeKuesionerX, ArrayList<String> variableX) {
+//        loading.setMessage("Mengirim Kuesioner ...");
+//        loading.setCancelable(false);
+//        loading.show();
+//        BaseApiService apiService = Server.getUrl().create(BaseApiService.class);
+//        Call<ResponsModelKuesioner> getValueofKuesioner = apiService.sendKuesioner(kodePertanyaanX, kodeKuesionerX, variableX);
+//        getValueofKuesioner.enqueue(new Callback<ResponsModelKuesioner>() {
+//            @Override
+//            public void onResponse(@NonNull Call<ResponsModelKuesioner> call, @NonNull Response<ResponsModelKuesioner> response) {
+//                loading.dismiss();
+//                Log.d("onResponse", "Message : " + Objects.requireNonNull(response.body()).toString());
+//                String kode = response.body().getKode();
+//                String message = response.body().getPesan();
+//                if (kode.equals("1")) {
+//                    Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+////                    updateStatus(npm, nik);
+//                    Intent send = new Intent(getApplicationContext(), MainActivity.class);
+//                    startActivity(send);
+//                } else {
+//                    Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+//
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(@NonNull Call<ResponsModelKuesioner> call, @NonNull Throwable t) {
+//                loading.dismiss();
+//                Log.e("onFailure : ", "Message : " + String.valueOf(t.getMessage()));
+//                Toast.makeText(getApplicationContext(), "Gagal Menghubungkan Internet !", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
 
 }

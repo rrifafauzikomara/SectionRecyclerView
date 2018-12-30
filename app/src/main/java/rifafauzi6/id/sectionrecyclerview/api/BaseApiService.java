@@ -16,10 +16,10 @@ public interface BaseApiService {
         @GET("get1.php")
         Call<ResponsModelQuestion> getPertanyaan(@Query("kd_pertanyaan") String kd_pertanyaan);
 
-        @FormUrlEncoded
-        @POST("insert1.php")
-        Call<ResponsModelKuesioner> sendKuesioner(@Field("kd_pertanyaan[]") ArrayList<String> kd_pertanyaan,
-                                                  @Field("kd_kuesioner[]") ArrayList<String> kd_kuesioner,
-                                                  @Field("variabel[]") ArrayList<String> variabel);
+//        @FormUrlEncoded
+//        @POST("insert1.php")
+//        Call<ResponsModelKuesioner> sendKuesioner(@Field("kd_pertanyaan[]") ArrayList<String> kd_pertanyaan,
+//                                                  @Field("kd_kuesioner[]") ArrayList<String> kd_kuesioner,
+//                                                  @Field("variabel[]") ArrayList<String> variabel);
 
 }
