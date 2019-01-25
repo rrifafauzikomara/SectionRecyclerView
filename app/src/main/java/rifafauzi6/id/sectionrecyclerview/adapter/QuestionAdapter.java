@@ -73,17 +73,16 @@ public class QuestionAdapter extends StatelessSection {
     public void onBindItemViewHolder(RecyclerView.ViewHolder holder, final int position) {
         final ItemViewHolder itemHolder = (ItemViewHolder) holder;
         Question question = listQuestion.get(position);
-        try {
-            //itemHolder.txtKdPertanyaan.setText(kdPertanyaan.set(position, question.getKd_pertanyaan()));
-            //itemHolder.txtKdKuesioner.setText(kdKuesioner.set(position, question.getKd_kuesioner()));
-            itemHolder.txtKdPertanyaan.setText(question.getKd_pertanyaan());
-            itemHolder.txtKdKuesioner.setText(question.getKd_kuesioner());
-            itemHolder.txtNo.setText(question.getNo());
-            itemHolder.txtPertanyaan.setText(question.getPertanyaan());
-            itemHolder.question = question;
-        }catch(IndexOutOfBoundsException ex){
-            ex.printStackTrace();
-        }
+//        try {
+//
+//        }catch(IndexOutOfBoundsException ex){
+//            ex.printStackTrace();
+//        }
+        itemHolder.txtKdPertanyaan.setText(kdPertanyaan.set(position, question.getKd_pertanyaan()));
+        itemHolder.txtKdKuesioner.setText(kdKuesioner.set(position, question.getKd_kuesioner()));
+        itemHolder.txtNo.setText(question.getNo());
+        itemHolder.txtPertanyaan.setText(question.getPertanyaan());
+        itemHolder.question = question;
         itemHolder.rb1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

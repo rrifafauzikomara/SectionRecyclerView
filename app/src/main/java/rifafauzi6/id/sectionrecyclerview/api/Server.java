@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Server {
 
-    private  static  final String base_url = "http://192.168.100.7/kuesioner/api/";
+    private  static  final String base_url = "http://192.168.100.17/kuesioner/api/";
 
     public static Retrofit getUrl() {
 
